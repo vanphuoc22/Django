@@ -36,6 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'courses.apps.CoursesConfig'
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +53,7 @@ import pymysql
 
 pymysql.install_as_MySQLdb()
 
+MEDIA_ROOT = '%s/courses/static/' % BASE_DIR
 ROOT_URLCONF = 'djangoapp.urls'
 
 TEMPLATES = [
@@ -70,6 +73,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'djangoapp.wsgi.application'
+CKEDITOR_UPLOAD_PATH = "ckeditor/lessons/"
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
